@@ -125,7 +125,7 @@
   </div>
 </div>
 
- {{--  <section class="featured dd" id="fearured">
+ <section class="featured dd" id="fearured">
     <center><h1 class="heading">New <span>Arrivals</span></h1></center>
  @foreach ($categorys as $category)
     <div class="row">
@@ -153,7 +153,7 @@
     </div>
 @endforeach
 {{  $categorys->links() }}
-</section>  --}}
+</section>
 
 <section class="main-content">
     <div class="container">
