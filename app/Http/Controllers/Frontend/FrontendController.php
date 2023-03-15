@@ -47,8 +47,6 @@ class FrontendController extends Controller
     {
         if(Auth::check())
         {
-
-
             $products = Product::find($id);
             $card = session()->get('card',[]);
             if(isset($card[$id])){
