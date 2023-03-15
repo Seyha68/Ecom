@@ -43,12 +43,26 @@ class FrontendController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function Addcardt(Request $request,$id)
+    public function Addcard(Request $request,$id)
     {
-        if(Auth::id())
+        if(Auth::check())
         {
+
+
             $products = Product::find($id);
-            return view('frondents.card',compact('products'));
+            $card = session()->get('card',[]);
+            if(isset($card[$id])){
+                $card[$id]['qty']++;
+            }else{
+                $card[$id] = [
+                    "prod_name"=>$products->prod_name,
+                    "image"=>$products->image,
+                    "selling_price"=>$products->selling_price,
+                    "qty"=>1
+                ];
+            }
+            session()->put('card',$card);
+            return redirect()->back()->with('message','Add to card Successful!');
         }else{
             return redirect('login')->with('message','Go to login Bro');
         }
@@ -72,9 +86,9 @@ class FrontendController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function Showcard()
     {
-        //
+        return view('frondents.card');
     }
 
     /**
@@ -95,8 +109,16 @@ class FrontendController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        // dd($id);
+        $card = session()->get('card');
+
+        if (isset($card[$id])) {
+            unset($card[$id]);
+            session()->put('card', $card);
+        }
+        return redirect('/')->with('message','Deleted card Successful!');
     }
+
 }

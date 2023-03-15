@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/custom.css') }}" rel="stylesheet">
@@ -34,6 +35,7 @@
     <!-- Scripts -->
     <script src="{{ asset('asset/js/jquery-3.6.3.min.js') }}" defer></script>
     <script src="{{ asset('asset/js/bootstrap.bundle.min.js') }}" defer></script>
+
     @livewireScripts
 </body>
 </html>

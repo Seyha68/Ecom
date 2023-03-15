@@ -45,8 +45,17 @@
 
 
 
+
+
+
+
+
 <div class="py-3 py-md-5 bg-light">
     <div class="container">
+        @if(session('message'))
+        <h2 class="alert alert-success">{{ session('message') }}
+        </h2>
+        @endif
         <div class="row">
             <div class="col-md-12">
                 <h4 class="mb-4" style="font-size: 50px; font-weight: 600; color:rgb(15, 15, 15);">Product</h4>
@@ -56,8 +65,10 @@
                 <img src="{{ asset('uploads/products/' .$product->image) }} " class="card-img-top" style="height: 300px; margin-top:10px; object-fit: cover;" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{ $product->prod_name }}</h5>
-                  <p class="card-text">{{ $product->description }}</p>
-                  <a href="#" class="btn btn-primary">Add Card</a>
+                  <p class="card-text text-decoration-line-through">${{ $product->original_price }}</p>
+                  <p>Sell Price:${{ $product->selling_price }}</p>
+                  <a href="{{ route('add_to_card', $product->id) }}" class="btn btn-primary">Add Card</a>
+                  <a href="{{ url('product',$product->id) }}" class="btn btn-primary">View</a>
                 </div>
 
             </div>
@@ -75,86 +86,8 @@
 
 
 
-<div class="title h1 text-center">Horizontal cards - Bootstrap 4</div>
-<!-- Card Start -->
-<div class="card">
-  <div class="row ">
 
-    <div class="col-md-7 px-3">
-      <div class="card-block px-6">
-        <h4 class="card-title">Horizontal Card with Carousel - Bootstrap 4 </h4>
-        <p class="card-text">
-          The Carousel code can be replaced with an img src, no problem. The added CSS brings shadow to the card and some adjustments to the prev/next buttons and the indicators is rounded now. As in Bootstrap 3
-        </p>
-        <p class="card-text"></p>
-        <br>
-        <a href="#" class="mt-auto btn btn-primary">Read More</a>
-      </div>
-    </div>
-    <!-- Carousel start -->
-    <div class="col-md-5">
-      <div id="CarouselTest" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
-          <li data-target="#CarouselTest" data-slide-to="1"></li>
-          <li data-target="#CarouselTest" data-slide-to="2"></li>
-
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block" src="https://picsum.photos/450/300?image=855" alt="">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block" src="https://picsum.photos/450/300?image=355" alt="">
-          </div>
-          <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-            </a>
-                    <a class="carousel-control-next" href="#CarouselTest" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-            </a>
-        </div>
-      </div>
-    </div>
-    <!-- End of carousel -->
-  </div>
-</div>
-
- <section class="featured dd" id="fearured">
-    <center><h1 class="heading">New <span>Arrivals</span></h1></center>
- @foreach ($categorys as $category)
-    <div class="row">
-        <div class="image-container">
-            <div class="big-image">
-                <img src="{{ asset('uploads/category/'.$category->img) }}" alt="" class="big-image-1">
-            </div>
-        </div>
-        <div class="content">
-            <h3>new {{ $category->name }}</h3>
-            <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Fugit officiis omnis quo laboriosam velit culpa ex illo, error enim nostrum?
-            </p>
-            <div class="price">Selling Price :${{ $category->sell_price }} <span>Price: ${{ $category->origin_price }}</span></div>
-            <a href="#" class="btn btn-primary">add to cart</a>
-        </div>
-    </div>
-@endforeach
-{{  $categorys->links() }}
-</section>
-
+{{--  team  --}}
 <section class="main-content">
     <div class="container">
         <h1 class="text-center">Our <b>Team</b></h1>

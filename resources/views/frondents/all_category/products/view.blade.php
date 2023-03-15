@@ -19,9 +19,7 @@
                     <h4 class="product-name">
 
                         {{ $products->prod_name }}
-
-
-                        <label class="label-stock bg-success">In Stock</label>
+                        {{--  <label class="label-stock bg-success">In Stock</label>  --}}
                     </h4>
                     <hr>
                     <p class="product-path">
@@ -39,7 +37,7 @@
                         </div>
                     </div>
                     <div class="mt-2">
-                        <a href="" class="btn btn-primary"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                        <a href="{{ route('add_to_card', $products->id) }}" class="btn btn-primary"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
                         {{--  <a href="" class="btn btn1"> <i class="fa fa-heart"></i> Add To Wishlist </a>  --}}
                     </div>
                     <div class="mt-3">

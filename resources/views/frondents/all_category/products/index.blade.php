@@ -17,13 +17,11 @@
                 <img src="{{ asset('uploads/products/' .$product->image) }} " class="card-img-top" style="height: 300px; margin-top:10px; object-fit: cover;" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{ $product->prod_name }}</h5>
-                  <p class="card-text">{{ $product->description }}</p>
-                  <div>
+                  {{--  <p class="card-text">{{ $product->description }}</p>  --}}
                     <p class="text-decoration-line-through">Price:${{ $product->original_price }}</p>
-                    <p class="selling-price">Sell price: ${{ $product->selling_price }}</p>
-                  </div>
-
-                  <a href="#" class="btn btn-primary">Add Card</a>
+                    <p class="card-text">Sell price: ${{ $product->selling_price }}</p>
+                    <a href="{{ route('add_to_card', $product->id) }}" class="btn btn-primary">Add Card</a>
+                    <a href="{{ url('product',$product->id) }}" class="btn btn-primary">View</a>
                 </div>
             </div>
             @empty

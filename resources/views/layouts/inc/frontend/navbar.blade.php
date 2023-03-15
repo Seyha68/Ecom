@@ -23,10 +23,11 @@
                             <a class="nav-link" href="{{ url('product') }}">Our Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <i class="fa fa-shopping-cart"></i> Cart (0)
+                            <a class="nav-link" href="{{ url('show_card') }}">
+                                <i class="fa fa-shopping-cart"></i> Cart ({{ count((array) session('card')) }})
                             </a>
                         </li>
+
                         {{--  <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fa fa-heart"></i> Wishlist (0)
@@ -75,3 +76,7 @@
         </div>
     </div>
 </div>
+
+<script>
+
+</script>

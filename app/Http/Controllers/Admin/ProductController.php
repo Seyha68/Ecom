@@ -127,7 +127,7 @@ class ProductController extends Controller
                 'prod_name'=>'required',
                 'description'=>'required',
                 'category_id'=>'required',
-                'image'=>'required',
+                // 'image'=>'required',
                 // 'status'=>'required',
                 'original_price'=>'required',
                 'selling_price'=>'required',

@@ -53,7 +53,7 @@ Route::resource('products',ProductController::class);
 
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('product',[App\Http\Controllers\Frontend\FrontendController::class, 'create']);
-Route::get('product/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'show']);
-Route::get('product/card/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'Addcardt']);
-// Route::resource('/' ,FrontendController::class);
-// Route::resource('all-category',FrontendController::class);
+Route::get('product/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'show'])->name('product');
+Route::get('add_to_card/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'Addcard'])->name('add_to_card');
+Route::get('show_card',[App\Http\Controllers\Frontend\FrontendController::class, 'Showcard'])->name('show_card');
+Route::get('/remove/{id}', [App\Http\Controllers\Frontend\FrontendController::class,'delete'])->name('remove');
