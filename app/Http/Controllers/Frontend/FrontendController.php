@@ -118,6 +118,7 @@ class FrontendController extends Controller
             unset($card[$id]);
             session()->put('card', $card);
         }
+        
         return redirect('/')->with('message','Deleted card Successful!');
     }
 
