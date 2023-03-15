@@ -47,8 +47,6 @@ class FrontendController extends Controller
     {
         if(Auth::check())
         {
-
-
             $products = Product::find($id);
             $card = session()->get('card',[]);
             if(isset($card[$id])){
@@ -118,7 +116,7 @@ class FrontendController extends Controller
             unset($card[$id]);
             session()->put('card', $card);
         }
-        
+
         return redirect('/')->with('message','Deleted card Successful!');
     }
 
