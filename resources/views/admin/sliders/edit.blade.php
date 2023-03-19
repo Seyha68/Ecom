@@ -19,13 +19,13 @@
                     @method('put')
                     <div class="row">
                         <div class=" col-md-6 mb-3">
-                            <label>Brand Name</label>
+                            <label>Title</label>
                             <input type="text" name="title" class="form-control" value="{{ $sliders->title }}">
                             @error('title') <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class=" col-md-6 mb-3">
-                            <label>Brand Name</label>
+                            <label>Description</label>
                             <input type="text" name="description" class="form-control" value="{{ $sliders->description }}">
                             @error('description') <span class="text-danger">{{ $message }}</span>
                             @enderror

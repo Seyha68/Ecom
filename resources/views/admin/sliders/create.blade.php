@@ -17,7 +17,7 @@
                     @csrf
                     <div class="row">
                         <div class=" col-md-12 mb-3">
-                            <label>Brands Name</label>
+                            <label>Title</label>
                             <input type="text" name="title" class="form-control">
                             @error('title') <span class="text-danger">{{ $message }}</span>
 
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class=" col-md-12 mb-3">
-                            <label>Brands Name</label>
+                            <label>Description</label>
                             <input type="text" name="description" class="form-control">
                             @error('description') <span class="text-danger">{{ $message }}</span>
 

@@ -4,6 +4,7 @@
 
 @section('content')
 
+{{--  Slider  --}}
 <div id="carouselExampleCaptions" class="carousel slide"  data-bs-ride="false">
     <div class="carousel-inner">
     @foreach ($sliders as $key =>  $slider)
@@ -42,16 +43,10 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-
-
-
-
-
-
-
-<div class="py-3 py-md-5 bg-light">
-    <div class="container">
+ <br><br><br>
+{{--  Product  --}}
+{{--  <div class="py-3 py-md-5 bg-light">  --}}
+    <div class="container cont">
         @if(session('message'))
         <h2 class="alert alert-success">{{ session('message') }}
         </h2>
@@ -81,15 +76,52 @@
         </div>
         {{  $products->links() }}
     </div>
-</div>
+{{--  </div>  --}}
+<br><br><br>
+   {{--  Contact Form  --}}
+   <div class="container cont">
+    <center><h1>Contact US</h1></center>
+    <form action="" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="row">
+            <div class=" col-md-12 mb-3">
+                <label> Youre Name</label>
+                <input type="text" name="name" class="form-control">
+                @error('name') <span class="text-danger">{{ $message }}</span>
 
+                @enderror
+            </div>
 
+            <div class="col-md-6 mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control">
+                @error('email') <span class="text-danger">{{ $message }}</span>@enderror
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Phone Number</label>
+                <input type="text" name="phone" class="form-control">
+                @error('phone') <span class="text-danger">{{ $message }}</span>@enderror
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label>Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                @error('phone') <span class="text-danger">{{ $message }}</span>@enderror
+            </div>
+
+            <div class="col-md-12 mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+  </div>
 
 
 
 {{--  team  --}}
 <section class="main-content">
-    <div class="container">
+    <div class="container cont">
         <h1 class="text-center">Our <b>Team</b></h1>
         <p class="text-center text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem tenetur harum nobis esse ex alias.</p>
         <br><br>
@@ -278,7 +310,54 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="profile-card bg-white shadow mb-4 text-center rounded-lg p-4 position-relative h-100">
+                    <div class="profile-card_image">
+                        <img src="images/team/ousa.jpg" alt="User" class="mb-4 shadow">
+                    </div>
+                    <div class="profile-card_details">
+                        <h3 class="mb-0">Sim Ousa</h3>
+                        <p class="text-muted">Develop</p>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum ab eum magni nobis autem dolorum!</p>
+                    </div>
+                    <div class="profile-card_social text-center p-4">
+                        <a href="#!" class="d-inline-block">
+                            <img src="images/social/linkedin.png" alt="Linkedin">
+                        </a>
+                        <a href="#!" class="d-inline-block">
+                            <img src="images/social/twitter.png" alt="Twitter">
+                        </a>
+                        <a href="#!" class="d-inline-block">
+                            <img src="images/social/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <center>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="profile-card bg-white shadow mb-4 text-center rounded-lg p-4 position-relative h-100">
+                    <div class="profile-card_image">
+                        <img src="images/team/sakbory.jpg" alt="User" class="mb-4 shadow">
+                    </div>
+                    <div class="profile-card_details">
+                        <h3 class="mb-0">Sak Bory</h3>
+                        <p class="text-muted">Develop</p>
+                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum ab eum magni nobis autem dolorum!</p>
+                    </div>
+                    <div class="profile-card_social text-center p-4">
+                        <a href="#!" class="d-inline-block">
+                            <img src="images/social/linkedin.png" alt="Linkedin">
+                        </a>
+                        <a href="#!" class="d-inline-block">
+                            <img src="images/social/twitter.png" alt="Twitter">
+                        </a>
+                        <a href="#!" class="d-inline-block">
+                            <img src="images/social/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                </div>
         </div>
+    </center>
     </div>
 </section>
 

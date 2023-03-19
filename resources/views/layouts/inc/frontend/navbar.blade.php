@@ -28,11 +28,11 @@
                             </a>
                         </li>
 
-                        {{--  <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <i class="fa fa-heart"></i> Wishlist (0)
+                                Feedback
                             </a>
-                        </li>  --}}
+                        </li>
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
