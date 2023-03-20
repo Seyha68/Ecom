@@ -28,11 +28,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Feedback
-                            </a>
-                        </li>
+                        
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
