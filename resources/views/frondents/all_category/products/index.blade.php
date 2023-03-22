@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4 class="mb-4" style="font-size: 50px; font-weight: 600; color:rgb(15, 15, 15);">Our Product</h4>
+                <h4 class="mb-4" style="font-size: 50px; font-weight: 600; color:rgb(15, 15, 15);"> Product</h4>
             </div>
             @forelse ($products as $product)
             <div class="card" style="width: 18rem; height: 500px; margin-top:26px; margin-left:20px">

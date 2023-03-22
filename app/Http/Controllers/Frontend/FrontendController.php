@@ -119,5 +119,14 @@ class FrontendController extends Controller
 
         return redirect('/')->with('message','Deleted card Successful!');
     }
-
+    public function Search(Request $request)
+    {
+       if($request->search){
+          $searching = Product::where('prod_name','LIKE','%'.$request->search.'%')->latest()->paginate(8);
+          return view('frondents.search',compact('searching'));
+       }
+       else{
+         return redirect()->back();
+       }
+    }
 }

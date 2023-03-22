@@ -6,9 +6,9 @@
                     <h5 class="brand-name">MarketOnline</h5>
                 </div>
                 <div class="col-md-5 my-auto">
-                    <form role="search">
+                    <form action="{{ url('search') }}" role="search" method="GET">
                         <div class="input-group">
-                            <input type="search" placeholder="Search your product" class="form-control" />
+                            <input type="search" name="search" value="" placeholder="Search your product" class="form-control" />
                             <button class="btn bg-white" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
@@ -28,7 +28,7 @@
                             </a>
                         </li>
 
-                        
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">

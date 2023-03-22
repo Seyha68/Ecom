@@ -59,7 +59,7 @@ Route::get('product/{id}',[App\Http\Controllers\Frontend\FrontendController::cla
 Route::get('add_to_card/{id}',[App\Http\Controllers\Frontend\FrontendController::class, 'Addcard'])->name('add_to_card');
 Route::get('show_card',[App\Http\Controllers\Frontend\FrontendController::class, 'Showcard'])->name('show_card');
 Route::get('/remove/{id}', [App\Http\Controllers\Frontend\FrontendController::class,'delete'])->name('remove');
-
+Route::get('search', [App\Http\Controllers\Frontend\FrontendController::class,'search'])->name('search');
 // Route contact
 // Route::get('contacts',[App\Http\Controllers\Frontend\ContactController::class, 'index']);
 Route::resource('contacts',ContactController::class);
