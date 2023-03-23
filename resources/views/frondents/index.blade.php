@@ -337,7 +337,7 @@
                     </div>
                 </div>
             </div>
-            <center>
+
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="profile-card bg-white shadow mb-4 text-center rounded-lg p-4 position-relative h-100">
                     <div class="profile-card_image">
@@ -360,8 +360,31 @@
                         </a>
                     </div>
                 </div>
+            </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="profile-card bg-white shadow mb-4 text-center rounded-lg p-4 position-relative h-100">
+                <div class="profile-card_image">
+                    <img src="images/team/saran.jpg" alt="User" class="mb-4 shadow">
+                </div>
+                <div class="profile-card_details">
+                    <h3 class="mb-0">Em Saran</h3>
+                    <p class="text-muted">Develop</p>
+                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum ab eum magni nobis autem dolorum!</p>
+                </div>
+                <div class="profile-card_social text-center p-4">
+                    <a href="#!" class="d-inline-block">
+                        <img src="images/social/linkedin.png" alt="Linkedin">
+                    </a>
+                    <a href="#!" class="d-inline-block">
+                        <img src="images/social/twitter.png" alt="Twitter">
+                    </a>
+                    <a href="#!" class="d-inline-block">
+                        <img src="images/social/facebook.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
         </div>
-    </center>
     </div>
 </section>
 
